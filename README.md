@@ -13,7 +13,13 @@ html, css, JS, bootstrap and mongoDB.
 ## Our website
 <img src="https://github.com/Mudhi24/Pawfect/blob/main/website.png">
 
-## Steps
+## Code folders
+1. <b>Views folder:</b> consists of the front-end code (ejs, css, and Javascript)
+2. <b>Models folder:</b> conists of the MongoDB related code (for users, pets, and session databases)
+3. <b>app.js:</b> the main file to open the website
+4. <b>node_models, package-json:</b> folders to be used for Node Js
+
+## Run the website
 1. run the app.js file by uing "npm run start" command in the terminal.
 2. search for http://localhost:3000
 3. perfect, now our website is running
