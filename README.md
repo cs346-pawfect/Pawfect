@@ -12,3 +12,10 @@ html, css, JS, bootstrap and mongoDB.
 
 ## Our website
 <img src="https://github.com/Mudhi24/Pawfect/blob/main/website.png">
+
+## Steps
+1. run the app.js file by uing "npm run start" command in the terminal.
+2. search for http://localhost:3000
+3. perfect, now our website is running
+
+Note: the connection with MongoDB may cause the website to not load immediatly.
