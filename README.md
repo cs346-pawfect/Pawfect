@@ -25,3 +25,12 @@ html, css, JS, bootstrap and mongoDB.
 3. perfect, now our website is running
 
 Note: the connection with MongoDB may cause the website to not load immediatly.
+
+## Contributors 
+CS364 - Section 371
+| Name  | ID |
+|:-----:|:---:|
+| Abeer Mohammed Aldosari  |  440023513 |
+| Mudhi Deeb Alqahtani  |  439021022 | 
+| Nouf Mohammed Alajmi |  441022333 |
+| Razan Saad Alabdulkarim | 440021710 |
