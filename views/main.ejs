@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <!-- title (name of website) -->
+    <title>Pawfect</title>
+
+    <!-- font link (awesome cdn) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Bootstrap link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+    <!-- swiper link (for customer reviews section) -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+
+    <!-- style.css file link  -->
+    <link rel="stylesheet" href="css/main_style.css">
+    
+</head>
+
+<body>
+    
+    
+    <!-- header section starts  -->
+
+    <header class="header">
+
+        <!-- logo -->
+        <a href="#" class="logo"> <i class="fas fa-paw logo"></i> Pawfect </a>
+
+        <!-- navbar -->
+        <nav class="navbar">
+            <a href="#home" class="navbar-home-btn">Home</a>
+            <a href="#about" class="navbar-about-btn">About</a>
+            <a href="#pets" class="navbar-pets-btn">Pets</a>
+            <a href="#footer" class="navbar-contact-btn">Contact</a>
+        </nav>
+
+        <!-- navbar buttons (login button)-->
+        <div class="navbar-buttons">
+            <div id="menu-btn" class="fas fa-bars"></div>
+
+            <% if ( !isAuth) { %>
+                <!-- if the user did not log in (Not authorized) 
+                      display the Login button -->
+                <a href="/login"><button id="login-btn" value="login">Login</button></a>
+
+            <% } else { %>
+                <!-- if the user logged in (Authorized)
+                     change the login button to the profile button -->
+                <a href="#" class="logo"> <i class="fas fa-user"></i> </a>
+            <%} %>
+            
+        </div>
+    
+    </header>
+
+
+    <!-- header section ends  -->
+
+
+
+    <!-- home section starts  -->
+
+
+    <section class="home" id="home">
+
+        <!-- header content at the left -->
+        <div class="content">
+
+            <!-- big phrase -->
+            <h3>Find your <span>Pet friend </span>and give them a forever home</h3>
+
+            <!-- small paragraph -->
+            <p>Discover the joy of pet adoption and make a positive impact on a furry friend's life. Browse our lovingly curated selection of pets and find your perfect match</p>
+            
+            <!-- search button -->
+            <a href="#" class="btn"><div class="fas fa-paw"> </div> Search Naw</a>
+        
+        </div>
+
+        <!-- header content at the right (the big image) -->
+        <div class="image">
+
+            <!-- the big image of women and cat -->
+            <img src="img/home.png" alt="home image" class="home-img">
+
+            <!-- the little paws decoration around the home image -->
+            <img src="img/paws.png" alt="decore image" class="home-parallax-img">
+        </div>
+
+    </section>
+    
+    <!-- wave decoration image under home page -->
+    <img src="img/wave.png" alt="hi" width="100%" style="background-color: var(--lighter-grey);">
+
+
+    <!-- home section ends  -->
+
+    
+
+    <!-- categories section starts  -->
+
+
+    <section class="categories">
+
+        <!-- categories section title -->
+        <div class="heading">
+            <h3>categories</h3>
+        </div>
+
+        <!-- categories container -->
+        <div class="categories-container">
+            
+            <!-- category 1 -->
+            <a href="#" class="box">
+                <i class="fa-solid fa-cat"></i>
+                <h3>Cats</h3>
+            </a>
+            
+            <!-- category 2 -->
+            <a href="#" class="box">
+                <i class="fa-solid fa-dog"></i>
+                <h3>Dogs</h3>
+            </a>
+
+            <!-- category 3 -->
+            <a href="#" class="box">
+                <i class="fa fa-crow"></i>
+                <h3>Birds</h3>
+            </a>
+
+            <!-- category 4 -->
+            <a href="#" class="box">
+                <i class="fa-solid fa-fish"></i>
+                <h3>Fishes</h3>
+            </a>
+
+            <!-- category 5 -->
+            <a href="#" class="box">
+                <i class="fa-solid fa-horse"></i>
+                <h3>Horses</h3>
+            </a>
+        </div>
+    
+    </section>
+
+
+    <!-- categories section ends -->
+
+
+
+    <!-- pets section starts  -->
+
+
+    <section class="pets" id="pets">
+
+        <!-- pets section title -->
+        <div class="heading">
+            <span>Recent Pets</span>
+            <h3>our pet shop</h3>
+        </div>
+
+        <!-- pets container -->
+        <div class="box-container">
+
+
+            <!-- pet 1-->
+            <div class="box">
+
+                <!-- favorite icon -->
+                <a href="#" class="fa-regular fa-heart"></a>
+
+                <!-- pet image -->
+                <div class="image">
+                    <img src="img/shop-black-cat.png" alt="">
+                </div>
+
+                <!-- pet information -->
+                <div class="content">
+
+                    <div class="date-location">
+                        <i class="fas fa-calendar-days date"> <span>1 April</span></i>
+                        <i class="fas fa-location-dot location"><span> Riyadh</span></i>
+                    </div>
+
+                    <h3>Black Cat</h3>
+
+                    <hr>
+
+                    <!-- view details button -->
+                    <div class="date-location">
+                        <a href="/pet/<%= encodeURIComponent('black-cat') %>" class="btn">view details</a>
+                    </div>
+                
+                </div>
+            </div>
+
+
+            <!-- pet 2 -->
+            <div class="box">
+
+                <!-- favorite icon -->
+                <a href="#" class="fa-regular fa-heart"></a>
+
+                <!-- pet image -->
+                <div class="image">
+                    <img src="img/shop-three-cats.png" alt="">
+                </div>
+
+                <!-- pet information -->
+                <div class="content">
+
+                    <div class="date-location">
+                        <i class="fas fa-calendar-days date"> <span>20 April</span></i>
+                        <i class="fas fa-location-dot location"><span> Dammam</span></i>
+                    </div>
+
+                    <h3>Three Cats</h3>
+
+                    <hr>
+
+                    <!-- view details button -->
+                    <div class="date-location">
+                        <a href="/pet/<%= encodeURIComponent('three-cats') %>" class="btn">view details</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- pet 3 -->
+            <div class="box">
+
+                <!-- favorite icon -->
+                <a href="#" class="fa-regular fa-heart"></a>
+
+                <!-- pet image -->
+                <div class="image">
+                    <img src="img/shop-rabbit.png" alt="">
+                </div>
+
+                <!-- pet information -->
+                <div class="content">
+
+                    <div class="date-location">
+                        <i class="fas fa-calendar-days date"> <span>20 May</span></i>
+                        <i class="fas fa-location-dot location"><span> Jeddah</span></i>
+                    </div>
+
+                    <h3>Rabbit</h3>
+
+                    <hr>
+
+                    <!-- view details button -->
+                    <div class="date-location">
+                        <a href="/pet/<%= encodeURIComponent('rabbit') %>" class="btn">view details</a>
+                    </div>
+
+                </div>
+
+            </div>
+            
+
+            <!-- pet 4 -->
+            <div class="box">
+
+                <!-- favorite icon -->
+                <a href="#" class="fa-regular fa-heart"></a>
+                
+                <!-- pet image -->
+                <div class="image">
+                    <img src="img/shop-dog.png" alt="">
+                </div>
+                
+                <!-- pet iformation -->
+                <div class="content">
+
+                    <div class="date-location">
+                        <i class="fas fa-calendar-days date"> <span>20 July</span></i>
+                        <i class="fas fa-location-dot location"><span> Afif</span></i>
+                    </div>
+                    
+                    <h3>Dog</h3>
+
+                    <hr>
+
+                    <!-- view details button -->
+                    <div class="date-location">
+                        <a href="/pet/<%= encodeURIComponent('dog') %>" class="btn">view details</a>
+                    </div>
+
+                </div>
+            
+            </div>
+        
+        </div>
+    
+    </section>
+
+
+    <!-- pets section ends -->
+
+
+
+    <!-- about section starts  -->
+
+
+    <section class="about" id="about">
+        
+        <!-- the image on the left hand side of the section -->
+        <div class="image">
+            <img src="img/cat.png" alt="orange-cat.png">
+        </div>
+        
+        <!-- the content on the right hand side of the about section -->
+        <div class="content">
+            
+            <!-- pargraph about the website -->
+            <span>why choose us?</span>
+            <h3 class="title">what's make our service special!</h3>
+            
+            <p>
+                At Pawfect, we believe that every animal deserves a happy and healthy life. That's why we offer two services for
+                offering animals for adoption. The first service involves finding stray animals, providing them with medical
+                treatment and care, and offering them up for adoption. Our team of dedicated animal lovers works 
+            </p>
+
+            <!-- developer names boxes -->
+            <div class="icons-container">
+                
+                <!-- developer 1 -->
+                <div class="icons">
+                    <img src="img/developer.png" alt="developer.png">
+                    <h3>Abeer Aldosari</h3>
+                </div>  
+
+                <!-- developer 2 -->
+                <div class="icons">
+                    <img src="img/developer.png" alt="developer.png">
+                    <h3>Mudhi Alqahtani</h3>
+                </div>   
+
+                <!-- developer 3 -->
+                <div class="icons">
+                    <img src="img/developer.png" alt="developer.png">
+                    <h3>Nouf Alajmi</h3>
+                </div>  
+
+                <!-- developer 4 -->
+                <div class="icons">
+                    <img src="img/developer.png" alt="developer.png">
+                    <h3>Razan Alabdulkarim</h3>
+                </div>           
+            
+            </div>
+        
+        </div>
+    
+    </section>
+
+
+    <!-- about section ends -->
+
+
+
+    <!-- reviews section starts -->
+    
+
+    <section class="reviews">
+
+        <h1>Customers Reviews</h1>
+
+        <!-- slider main container -->
+        <div class="swiper">
+                
+            <!-- swiper-wripper (contains the reviews) -->
+            <div class="swiper-wrapper">
+
+                <!-- slide 1 -->
+                <div class="swiper-slide">
+
+                    <div class="flex">
+
+                        <div class="comments">
+                            I made the happiest decision of my life on May 10th when I adopted my teacup dog,
+                            Moon, with the help of Pawfect's adoption platform. Their user-friendly website and
+                            excellent customer service made the process smooth and enjoyable.
+                        </div>
+
+                        <div class="profile">
+                            <img src="img/reviews.png" alt="reviews.png">
+                            <a href="#">Rawan</a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- slide 2 -->
+                <div class="swiper-slide">
+
+                    <div class="flex">
+
+                        <div class="comments">
+                            On August 25th, I had the happiest moment of my life by adopting a local canary
+                            through the Pawfect adoption platform. All thanks to them for making the adoption
+                            process easy for me.
+                        </div>
+                        
+                        <div class="profile">
+                            <img src="img/reviews.png" alt="reviews.png">
+                            <a href="#">Arwa</a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- slide 3 -->
+                <div class="swiper-slide">
+                    
+                    <div class="flex">
+
+                        <div class="comments">
+                            Thanks to the adoption platform Pawfect, I had the happiest moment of my life on
+                            September 5th when I adopted a cat, and I am grateful to them for making the
+                            adoption process so easy for me.
+                        </div>
+
+                        <div class="profile">
+                            <img src="img/reviews.png" alt="reviews.png">
+                            <a href="#">JoJo</a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- pagination ( small dots under the reviews swiper ) --> 
+            <div class="swiper-pagination"></div>
+
+            <!-- navigation arrows -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+        </div>
+
+
+    </section>
+
+    
+    <!-- reviews section ends -->
+
+
+
+    <!-- footer section starts  -->
+
+
+    <section class="footer" id="footer" style="background-image: url('img/footer-bg.jpg')">
+        
+        <div class="footer-top">
+            
+            <div class="container">
+                
+            <!-- footer - left -->
+            <div class="footer-left">
+                
+                <!-- about the website -->
+                <div class="footer-company-about">
+                    
+                    <h3> <i class="fas fa-paw"></i> Pawfect</h3>
+                    <p>
+                        <strong>Pawfect</strong> This site has been created as a requirement for the (CS-346) Web application
+                        development Course at Imam Muhammad Bin Saud Islamic University.
+                    </p>
+                
+                </div>
+                
+                <!-- social media icons -->
+                <div class="social-icons-container">
+                    <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-linkedin"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-youtube"></ion-icon></a>
+                </div>
+            
+            </div>
+        
+            <!-- footer - center -->
+            <div class="footer-center">
+                
+                <a href="#" class="footer-links">About Us</a>
+                <a href="#" class="footer-links">Contact Us</a>
+                <a href="#" class="footer-links">Privacy Policy</a>
+                <a href="#" class="footer-links">Terms of Service</a>
+                <a href="#" class="footer-links">Pet Adoption</a>
+                <a href="#" class="footer-links">FAQs</a>
+
+            </div>
+
+            <!-- footer - right -->
+            <div class="footer-right">
+
+                <div class="contact-info">
+                    <i class="fa fa-location-dot">  </i>
+                    <span>Saudi Arabia - Riyadh</span>
+                </div>
+                
+                <div class="contact-info">
+                    <i class="fa fa-phone"> </i>
+                    <span>+966 555555555</span>
+                </div>
+                
+                <div class="contact-info">
+                    <i class="fa fa-envelope"> </i>
+                    <span><a href="mailto:support@gmail.com">support@gmail.com</a></span>
+                </div>
+            
+            </div>
+        
+        </div>
+        
+        <!-- copyright sentence -->
+        <div class="footer-bottom">
+            
+            <div class="container">
+                <p class="copyright">&copy; 2023 Made with ♥ by Abeer, Mudhi, Nouf, Razan</p>
+            </div>
+        
+        </div>
+    
+    </section>
+
+
+    <!-- footer section ends -->
+
+
+
+    <!-- custom js file link  -->
+
+    <!-- for reviews slider -->
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script> <!--swiper CDN-->
+
+    <!-- js file -->
+    <script src="js/main_script.js"></script>
+
+    <!-- js for icons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

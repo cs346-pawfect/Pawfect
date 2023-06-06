@@ -1,0 +1,968 @@
+/*-----------------------------------*\
+  #Fotns
+\*-----------------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Montserrat:wght@500&family=Nunito:wght@800&display=swap');
+
+
+/*-----------------------------------*\
+  #General Style (entire html document)
+\*-----------------------------------*/
+
+
+/* variables */
+:root{
+  --dark-green: #2c2e24;
+  --darker-green: #242524;
+  --light-green: #A7B47F;
+  --black: #292A2E;
+  --grey: #666;
+  --light-grey: #92999f;
+  --lighter-grey: #f7f7f7;
+  --white: #fff;
+
+
+}
+
+/* Style the entire website */
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
+}
+
+/* style the html to style the scoll bar*/
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 8.5rem;
+}
+
+/* style the size of the scroll bar*/
+html::-webkit-scrollbar {
+  width: 1rem;
+}
+
+/*style the scrollbar background*/
+html::-webkit-scrollbar-track {
+  background: var(--white);
+}
+
+/*style the scrollbar thumb (the component to be clicked by mouse)*/
+html::-webkit-scrollbar-thumb {
+  background: var(--light-green);
+  border-radius: 5rem;
+}
+
+
+/* style all sections*/
+section {
+  padding: 2rem 9%;
+}
+
+/* style all buttons */
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: .7rem 1.8rem;
+  font-size: 1.7rem;
+  cursor: pointer;
+  color: var(--white);
+  background: var(--light-green);
+  border-radius: .5rem;
+}
+
+/* style all when hover buttons */
+.btn:hover {
+  background: var(--dark-green);
+  color:var(--white);
+}
+
+/* style all links*/
+a{
+  text-decoration: none;
+}
+
+/* stle the headings (e.g. Categories title) in all sections*/
+.heading {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+/* style the small heading above the big heading 
+(e.g. the word "Recent pets" above the "our shop pets" heading) */
+.heading span {
+  font-family: 'Satisfy', cursive;
+  font-size: 3rem;
+  color: var(--light-green);
+}
+
+/* style the big heading under the small heading 
+(e.g. the word "our shop pets" under the  "Recent pets"heading) */
+.heading h3 {
+  font-size: 3rem;
+  color: var(--darker-green);
+}
+
+
+
+/*-----------------------------------*\
+  #Header
+\*-----------------------------------*/
+
+
+
+/*style the header box*/
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--white);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1.5rem 11%;
+}
+
+/*style the logo text and logo icon*/
+.header .logo {
+  font-size: 2.5rem;
+  font-weight: bolder;
+  color: var(--black);
+}
+
+/* style the logo icon */
+.header .logo i {
+  padding-right: .5rem;
+  color: var(--light-green);
+}
+
+/* style the navbar links (e.g. Home, About, etc)*/
+.header .navbar a {
+  font-size: 1.8rem;
+  margin: 0 1rem;
+  color: var(--grey);
+}
+
+.header .navbar a:hover {
+  color: var(--light-green);
+}
+
+/* Style the line appears under the navbar links when hovering*/
+.header .navbar .navbar-home-btn::after, .header .navbar .navbar-about-btn::after,
+.header .navbar .navbar-pets-btn::after , .header .navbar .navbar-contact-btn::after  {
+  content: "";
+  display: block;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--light-green);
+  transition: width 0.3s ease-in-out;
+}
+
+/* Animate the line under the navbar button */
+.header .navbar .navbar-home-btn:hover::after, .header .navbar .navbar-about-btn:hover::after, 
+.header .navbar .navbar-pets-btn:hover::after, .header .navbar .navbar-contact-btn:hover::after {
+  width: 100%;
+}
+
+/* navar buttons (login and menue bar)*/
+.header .navbar-buttons div {
+  height: 4.5rem;
+  width: 4.5rem;
+  line-height: 4.5rem;
+  font-size: 2rem;
+  background: var(--lighter-grey);
+  color: var(--black);
+  border-radius: .5rem;
+  margin-left: .3rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* style login button in the navbar*/
+.header .navbar-buttons button {
+  height: 4rem;
+  width: 12rem;
+  font-size: 1.5rem;
+  background: var(--white);
+  color: var(--light-green);
+  border: .09rem var(--light-green) solid;
+  border-radius: 4rem;
+  margin-left: .3rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.header .navbar-buttons button:hover {
+  color: var(--white);
+  background: var(--light-green);
+}
+
+/* style the menu bar button in the navbar (appears when shrinking the website size)*/
+.header .navbar-buttons div:hover{
+  color: var(--white);
+  background: var(--light-green);
+}
+
+/* the menu bar will not appear unless the user shrink the window */
+#menu-btn {
+  display: none;
+}
+
+
+
+
+/*-----------------------------------*\
+  #Home (front page) section
+\*-----------------------------------*/
+
+
+
+
+/* home section (the welcome phrase and big image) */
+.home {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap-reverse;
+      flex-wrap: wrap-reverse;
+  gap: 2rem;
+  position: relative;
+  overflow: hidden;
+  background: var(--lighter-grey);
+}
+
+/* style the home section content (the big welcoming phrase)*/
+.home .content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 52rem;
+          flex: 1 1 52rem;
+}
+
+/* style the welcoming phrase */
+.home .content h3 {
+  font-size: 5.5rem;
+  color: var(--darker-green);
+  padding-top: 1rem;
+  font-family: 'Comic Neue', cursive;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
+}
+
+/* style the welcoming phrase (the phrase with different color (pet friend))*/
+.home .content h3 span {
+  color: var(--light-green);
+  font-family: 'Comic Neue', cursive;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
+}
+
+/* style the paragraph under the welcoming phrase */
+.home .content p {
+  font-size: 1.6rem;
+  color: #666;
+  line-height: 2;
+  padding: 1rem 0;
+}
+
+/* style the images  (at the right hand side) in the home section */
+.home .image {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 41rem;
+          flex: 1 1 41rem;
+  margin: 2rem 0;
+  pointer-events: none;
+}
+
+/* style the home-img (the big image) */
+.home .image .home-img {
+  width: 100%;
+  margin: 2rem;
+}
+
+/* style the decoration image around the home-img (the moving paw symbols)*/
+.home .home-parallax-img {
+  position: absolute;
+  top: 5rem;
+  right: 1rem;
+  width: 44vw;
+}
+
+
+
+
+/*-----------------------------------*\
+  #categories-container section
+\*-----------------------------------*/
+
+
+
+/* style the categories section */
+.categories{
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+}
+
+/* style the categories section title */
+.categories .heading{
+  margin-bottom: 2rem;
+}
+
+/*style the categories-container */
+.categories-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(16rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 3rem;
+  padding-bottom: 5rem;
+  margin-left: 6rem;
+  margin-right: 6rem;
+
+}
+
+/*style the boxes inside the categories-container */
+.categories-container .box {
+  padding: 2rem;
+  text-align: center;
+  border-radius: 2rem;
+  background: var(--white);
+  border: var(--light-green) solid 1px;
+}
+
+.categories-container .box:hover {
+  background: var(--white);
+  border: var(--dark-green) solid 1px;
+}
+
+/* style the icons inside the categories-container boxes */
+.categories-container .box i {
+  height: 7rem;
+  font-size: 5.5rem;
+  color: var(--light-green);
+  font-weight: bolder;
+}
+
+.categories-container .box:hover i {
+  color: var(--dark-green);
+}
+
+/* style the animals categories names */
+.categories-container .box h3 {
+  font-size: 1.8rem;
+  color: var(--light-green);
+  font-family: 'Comic Neue', cursive;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
+}
+
+
+
+
+/*-----------------------------------*\
+  # Pets section
+\*-----------------------------------*/
+
+
+
+/* style the pets container*/
+.pets .box-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(25rem, 2fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 2fr));
+  gap: 1.5rem;
+}
+
+/* style each individual box in the pets section */
+.pets .box-container .box {
+  border-radius: 1.5rem;
+  position: relative;
+  background: var(--white);
+  border: var(--lighter-grey) solid .15rem;
+  -webkit-box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.05);
+  box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  text-align: center;
+  
+}
+
+/* when hovering over a pet, it will focus on it */
+.pets .box-container .box:hover {
+  transform: scale(1.008);
+  transition: all ease 0.3s;
+  box-shadow: 0 .6rem .5rem rgba(0, 0, 0, 0.10);
+}
+
+/* style the faviorite icon in the top-right corner of the box */
+.pets .box-container .box .fa-heart {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 2.5rem;
+  color: var(--grey);
+  cursor: pointer;
+}
+
+.pets .box-container .box .fa-heart:hover {
+  color: var(--light-green);
+}
+
+/* style the image container inside the box */
+.pets .box-container .box .image {
+  margin: 2rem 0;
+}
+
+/* style the image itself inside the box */
+.pets .box-container .box .image img {
+  height: 15rem;
+}
+
+/*style the title of the pet (e.g. black cat)*/
+.pets .box-container .box .content h3 {
+  font-size: 1.8rem;
+  color: var(--black);
+  text-align: left;
+  margin: 1.8rem;
+}
+
+/* style date-location */
+.pets .box-container .box .content .date-location p {
+  font-size: 1.5rem;
+  margin-top: 1.3rem;
+  margin-left: 1rem;
+  color:var(--light-green);
+  font-weight: bold;
+}
+
+/* style the date and location section insdie the pet box*/
+.pets .box-container .box .content .date-location {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap:2rem;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+  color: var(--grey);
+}
+
+/* style the date individually */
+.pets .box-container .box .content .date-location .date {
+  margin-left: 2rem;
+}
+
+/* style the location individually */
+.pets .box-container .box .content .date-location .location {
+  margin-right: 2rem;
+}
+
+/* style the button*/
+.pets .box-container .box .content .btn{
+  border-radius: 10rem;
+  font-size: 1.3rem;
+  bottom: 1.5rem;
+  right: 1.5rem;
+}
+
+
+
+/*-----------------------------------*\
+  # About section
+\*-----------------------------------*/
+
+
+/* style the about section */
+.about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background: var(--lighter-grey);
+}
+
+/* style the image container (at the left hand side) of the section*/
+.about .image {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40rem;
+          flex: 1 1 40rem;
+}
+
+/* style the image itself */
+.about .image img {
+  width: 100%;
+}
+
+/* style the about content (at the right hand side)*/
+.about .content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40rem;
+          flex: 1 1 40rem;
+}
+
+/* style the green title */
+.about .content span {
+  font-family: 'Satisfy', cursive;
+  font-size: 3rem;
+  color: var(--light-green);
+}
+
+/* style the black title */
+.about .content .title {
+  font-size: 3rem;
+  padding-top: .5rem;
+  color: var(--black);
+}
+
+/* style the paragraph */
+.about .content p {
+  padding: 1rem 0;
+  line-height: 2;
+  font-size: 1.4rem;
+  color: var(--grey);
+}
+
+/* style the developers container */
+.about .content .icons-container {
+  margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+/* style each developer icon in the developers container */
+.about .content .icons-container .icons {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 20rem;
+          flex: 1 1 20rem;
+  border-radius: .5rem;
+  background: var(--white);
+  -webkit-box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.05);
+          box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.05);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+  padding: 1.5rem;
+}
+
+/* style the name of the developer */
+.about .content .icons-container .icons h3 {
+  font-size: 1.7rem;
+  color: var(--black);
+}
+
+/* style the icon image */
+.about .content .icons-container .icons img {
+  height: 30px;
+  width: 30px;
+}
+
+
+
+/*-----------------------------------*\
+  # Reviews section
+\*-----------------------------------*/
+
+
+
+/* style the reviews section */
+.reviews {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: var(--color-dark);
+  text-align: center;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+/* style title of reviews section */
+.reviews h1 {
+  color: var(--light-green);
+}
+
+/* style the reviews swiper */
+.swiper {
+  width: 600px;
+  height: auto;
+}
+
+/* style the swiper slides (reviews boxes)*/
+.swiper .swiper-slide .flex {
+  margin: 3em 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* style the reviews (comment) itself */
+.swiper .swiper-slide .comments {
+  background-color: var(--lighter-grey);
+  padding: 1.5em 2em;
+  width: 70%;
+  border-radius: 5px;
+  position: relative;
+  color: var(--black);
+  font-size: 1.4rem;
+}
+
+/* style the small tringle under the review bubble */
+.swiper .swiper-slide .comments::after{
+  content: '';
+  position: absolute;
+  bottom: -19px;
+  left: 45%;
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid var(--lighter-grey);
+  z-index: -99;
+}
+
+/* style the container that have the image and username under the reviews */
+.swiper .profile{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1em;
+}
+
+/* style the image under the review */
+.swiper .profile img{
+  width: 20%;
+  border-radius: 50%;
+  border: 5px solid var(--color-primary);
+  margin: 10px 0;
+}
+
+/* style the username under the image */
+.swiper .profile > a {
+  text-decoration: none;
+  color: var(--black);
+  font-size: 1.5rem;
+
+}
+
+/* style the swiper arrows */
+.swiper .swiper-button-prev, .swiper .swiper-button-next{
+  color: var(--black);
+}
+
+.swiper .swiper-button-prev:hover, .swiper .swiper-button-next:hover{
+  color: var(--light-green);
+}
+
+.swiper .swiper-pagination{
+  color: var(--light-green);
+}
+
+
+
+/*-----------------------------------*\
+  # Footer section
+\*-----------------------------------*/
+
+
+
+
+/* style the entire footer section*/
+.footer {
+  background-color: var(--black);
+  color: var(--grey);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+/* style the footer top */
+.footer-top {
+  padding-block-start: 10%;
+}
+
+/* style the container inside the footer top */
+.footer-top .container {
+  grid-template-columns: 1fr 0.5fr 0.5fr;
+  display: grid;
+  gap: 7%;
+}
+
+
+/*-----------------------------------*\
+  # Footer-left
+\*-----------------------------------*/
+
+
+/* style the "pawfect" title */
+.footer-left .footer-company-about h3 {
+  display: block;
+  color: var(--white);
+  font-size: 2.7rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* style the small paragraph under the title*/
+.footer-left .footer-company-about p{
+  line-height: 20px;
+  color: var(--light-grey);
+  font-size: 13px;
+  font-weight: normal;
+  padding: 10px;
+  padding-top:0;
+}
+
+/* style social media icons container*/
+.footer-left .social-icons-container {
+  margin: 10px;
+}
+
+/* style the social media icon circle */
+.footer-left .social-icons-container a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 20px;
+  color: var(--white)fff;
+  margin: 10px ;
+  margin-bottom: 5px;
+}
+
+/* style the social media icon itself (inside the circle)*/
+.footer-left .social-icons-container a ion-icon {
+  background-color: var(--white);
+  color:var(--black);
+  padding: 12px;
+  border-radius: 50%;
+  transition: 0.25s ease;
+}
+
+/* style social media icon when hover*/
+.footer-left .social-icons-container a :hover{
+  background-color: var(--light-green);
+  color: var(--white);
+}
+
+
+/*-----------------------------------*\
+  # Footer-center
+\*-----------------------------------*/
+
+
+/* style the links in the footer center*/
+.footer-links{
+  color: var(--white);
+  display: inline;
+  text-decoration: none;
+  font-size: 1.6rem;
+  display: block;
+  margin : 1rem;
+}
+
+/* style the links when hovering*/
+.footer-links:hover {
+  color:var(--light-green);
+}
+
+
+/*-----------------------------------*\
+  # Footer-right
+\*-----------------------------------*/
+
+
+/* style the right footer section (contain the contact information)*/
+.footer-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 2.3rem;
+  height:12rem;
+}
+
+/* style the contact information section*/
+.footer-right .contact-info{
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 20rem;
+          flex: 1 1 20rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1.3rem;
+}
+
+/* style the contact information icons*/
+.footer-right .contact-info i {
+  font-size: 2rem;
+  color: var(--light-green);
+}
+
+/* style the contact information text*/
+.footer-right .contact-info span {
+  color: var(--white);
+  font-size:1.5rem;
+}
+
+/* style the email in the contact information section*/
+.footer-right .contact-info span a {
+  color: var(--light-green);
+  font-size:1.5rem;
+}
+
+
+/*-----------------------------------*\
+  # Footer-bottom
+\*-----------------------------------*/
+
+
+
+/* style the footer bottom box*/
+.footer-bottom {
+  padding-block: 20px;
+}
+
+/* style the copyright sentence in the bottom*/
+.copyright{
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+
+
+/*-----------------------------------*\
+  # Media section (for responsive website)
+\*-----------------------------------*/
+
+
+
+
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+  .header {
+    padding: 2rem;
+  }
+  section {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #menu-btn {
+    display: inline-block;
+  }
+  .header .navbar {
+    position: absolute;
+    top: 99%;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  .header .navbar.active {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+  .header .navbar a {
+    font-size: 2rem;
+    margin: 2rem;
+    display: block;
+  }
+  .home .home-parallax-img {
+    top: 0;
+    right: 0;
+    width: 130%;
+  }
+
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+  .home .content h3 {
+    font-size: 3rem;
+  }
+  .home .content p {
+    font-size: 1.5rem;
+  }
+}
+
+/* media for the swiper*/
+/*completly responded*/
+@media (min-width: 320px) {
+  .board{
+      width: auto;
+  }
+
+  .swiper {
+      width: 320px;
+    }
+
+    .board > h1, p{
+        padding: 0 2em;
+    }
+}
+
+/*completly responded with fingers*/
+@media (min-width: 768px) {
+  .board{
+      width: 100%;
+  }
+
+  .swiper {
+      width: 600px;
+    }
+
+  .swiper .swiper-button-prev, .swiper-button-next{
+      display: initial;
+  }
+
+}  

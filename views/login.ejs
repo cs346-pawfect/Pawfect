@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <!-- title (login) -->
+  <title>Sign in & Sign up </title>
+
+  <!-- style.css file link  -->
+  <link rel="stylesheet" href="css/login_style.css" />  
+
+    
+</head>
+
+<body>
+  
+  <main> <!--start main-->
+    
+    <div class="box"> <!--class box the big one-->
+      
+      <div class="inner-box"> <!--class inner-box the small one inside box-->
+        
+        <div class="forms-wrap"> <!--class for forms welcome back-->
+          
+          <!------- login form  ------>
+          <form action="/login" method="post" autocomplete="off" class="sign-in-form">
+            
+            <!-- hidden variable (for javascript) -->
+            <input type="hidden" name="formType" value="login">
+            
+            <!-- logo -->
+            <div class="logo">
+              <img src="./img/paw.png" alt="catsWorld" />
+              <h4>Pawfect</h4>
+            </div>
+            
+            <!-- welcoming phrase -->
+            <div class="heading">
+              <h1>Welcome Back</h1>
+              <h6>Not registred yet?</h6>
+              <a id='myButton' href="#" class="toggle">Sign up</a>
+            </div>
+            
+            <!-- login form components -->
+            <div class="actual-form">
+              
+              <div class="input-wrap">
+                
+                <!-- email field -->
+                <input
+                type="email"
+                name="email"
+                minlength="4"
+                class="input-field"
+                autocomplete="on"
+                required
+                />
+                
+                <label>Email</label>
+              
+              </div>
+              
+              <!-- password field -->
+              <div class="input-wrap">
+                
+                <input
+                type="password"
+                name="password"
+                minlength="4"
+                class="input-field"
+                autocomplete="off"
+                required/>
+                
+                <label>Password</label>
+
+              </div>
+              
+              <!-- display login error message (if any) -->
+              <% if (login_error_message !== '') { %>
+                <div class="error-message">
+                  <p><%= login_error_message %></p>
+                </div>
+              <% } %>
+              
+              <!-- login button -->
+              <input type="submit" value="Sign In" class="sign-btn" />
+              
+              <!-- small notice at the bottom -->
+              <p class="text">
+                Forgotten your password or you login datails?
+                <a href="gethelp.html">Get help</a> signing in
+              </p>
+            
+            </div>
+          
+          </form> <!-- login form end -->
+          
+          <!------- Signup form  ------>
+          <form action="/login" method="post" autocomplete="off" class="sign-up-form">
+            
+            <!-- hidden variable (for javascript) -->
+            <input type="hidden" name="formType" value="signup">
+            
+            <!-- logo -->
+            <div class="logo">
+              <img src="./img/paw.png" alt="catsWorld" />
+              <h4>Pawfect</h4>
+            </div>
+            
+            <!-- getting started phrase -->
+            <div class="heading">
+              <h2>Get Started</h2>
+              <h6>Already have an account?</h6>
+              <a href="#" class="toggle">Sign in</a>
+            </div>
+            
+            <!-- Signup form components --> 
+            <div class="actual-form">
+              
+              <!-- name field -->
+              <div class="input-wrap">
+                <input
+                type="text"
+                name="name"
+                minlength="4"
+                class="input-field"
+                autocomplete="off"
+                required/>
+                
+                <label>Name</label>
+              
+              </div>
+              
+              <!-- email field -->
+              <div class="input-wrap">
+                
+                <input
+                type="email"
+                name="email"
+                class="input-field"
+                autocomplete="on"
+                required/>
+                
+                <label>Email</label>
+              
+              </div>
+              
+              <!-- password field -->
+              <div class="input-wrap">
+                
+                <input
+                type="password"
+                name="password"
+                minlength="4"
+                class="input-field"
+                autocomplete="off"
+                required/>
+                
+                <label>Password</label>
+              
+              </div>
+
+              <!-- display signup error message (if any) -->
+              <% if (signup_error_message !== '') { %>
+                <div class="error-message">
+                  <p><%= signup_error_message %></p>
+                </div>
+              <% } %>
+              
+              <!-- sign up button -->
+              <input type="submit" value="Sign Up" class="sign-btn" />
+              
+              <!-- small notice paragraph at the bottom -->
+              <p class="text">
+                By signing up, I agree to the
+                <a href="#">Terms of Services</a> and
+                <a href="#">Privacy Policy</a>
+              </p>
+            
+            </div>
+          
+          </form> <!-- signup form end -->
+        
+        </div>
+        
+        <!-- the image slider -->
+        <div class="carousel">
+          
+          <!-- the pets image -->
+          <div class="images-wrapper">
+            <img src="./img/login.png" class="image img-1 show" alt="" />
+          </div>
+          
+          <div class="text-slider">
+            
+            <div class="text-wrap">
+              <div class="text-group">
+                <h2>Find your perfect<br> companion today!</h2>
+              </div>
+            </div>
+          
+          </div>
+        
+        </div>
+      
+      </div> <!--class inner-box-->
+    
+    </div><!--class box end-->
+  
+  </main> <!--end main-->
+
+  
+
+  <!-- custom js file link  -->
+  <script src="js/login_script.js"></script> <!--javascript file-->
+
+  <!-- for icons -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>
